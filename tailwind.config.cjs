@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Plus Jakarta Sans'],
+        body: ['Manrope'],
       },
       colors: {
         basecolor: '#111E36',

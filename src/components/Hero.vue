@@ -37,7 +37,7 @@ const menu = ref(
     <div class="flex justify-center">
       <div class="container">
         <nav class="text-white p-5 relative z-20 flex items-center justify-between">
-          <p class="title font-semibold text-[24px]">Infinitech.</p>
+          <p class="title font-semibold text-[24px]">IndoTravel.</p>
 
           <div class="gap-5 hidden lg:flex">
             <a href="#" v-for="(data , index) in menu" :key="index" class="text-base hover:underline hover:underline-offset-8 
