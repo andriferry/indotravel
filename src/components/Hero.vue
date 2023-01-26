@@ -45,7 +45,7 @@ const menu = ref(
     <div class="flex justify-center">
       <div class="container">
         <nav class="text-white p-5 relative z-20 flex items-center justify-between">
-          <p class="title font-semibold text-[24px]">Indotravel.</p>
+          <p class="title font-medium text-[24px]">Indotravel</p>
 
           <div class="gap-5 hidden lg:flex">
             <a href="#" v-for="(data , index) in menu" :key="index" class="text-base hover:underline hover:underline-offset-8 
@@ -101,14 +101,15 @@ const menu = ref(
         class="h-screen p-5 absolute block lg:hidden z-50 top-10 w-full"
       >
         <div class="bg-secondarycolor transition ease-in-out delay-150 p-4 rounded-lg shadow-xl">
-          <div class="flex justify-end text-white items-center">
+          <div class="flex justify-between text-white items-center">
+            <p class="font-medium text-base">Main Menu</p>
             <button @click="openMenu = !openMenu">
               <icon :icon="mdiClose" />
             </button>
           </div>
 
           <ul class="divide-y divide-white/75">
-            <li v-for="(menuItem, index) in menu" :key="index" class="text-xl font-medium p-3 text-white capitalize">
+            <li v-for="(menuItem, index) in menu" :key="index" class="text-base font-medium p-3 text-white capitalize">
               {{menuItem.linkName}} 
             </li>
           </ul>
