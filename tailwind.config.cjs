@@ -14,6 +14,9 @@ module.exports = {
         secondarycolor: '#08131D',
         black100color: '#151515'
       },
+      screens: {
+        'proseries': '400px'
+      },
     },
   },
   plugins: [],

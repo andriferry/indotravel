@@ -1,5 +1,6 @@
 <script setup>
 import Hero from "@/components/Hero.vue";
+import Navbar from "@/components/Navbar.vue";
 import Features from "@/components/Features.vue";
 import Service from "@/components/Service.vue";
 import Team from "@/components/Team.vue";
@@ -11,7 +12,13 @@ import Footer from "@/components/Footer.vue";
 
 <template>
   <div class="bg-white w-full font-body">
-    <Hero />
+    <!-- Section on -->
+    <div class="w-full h-screen proseries:h-[90vh] hero">
+      <Navbar />
+      <Hero />
+    </div>
+
+    <!-- <Hero /> -->
     <!-- <Features />
     <Service />
     <Team />
