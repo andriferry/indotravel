@@ -12,11 +12,11 @@ import Footer from "@/components/Footer.vue";
 <template>
   <div class="bg-white w-full font-body">
     <Hero />
-    <Features />
+    <!-- <Features />
     <Service />
     <Team />
     <Testimonial />
     <Form />
-    <Footer />
+    <Footer /> -->
   </div>
 </template>

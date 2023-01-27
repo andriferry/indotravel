@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { mdiEmail ,mdiMenu , mdiClose } from "@mdi/js";
+import { mdiMenu , mdiClose , mdiArrowDown } from "@mdi/js";
 
 
 //State
@@ -37,64 +37,50 @@ const menu = ref(
     },
   ]
 );
+
 </script>
 
 
 <template>
-  <div class="w-full relative h-[846px] sm:h-[180vh] md:h-[70vh] lg:h-screen bg-basecolor">
-    <div class="flex justify-center">
+  <div class="w-full relative h-[846px] sm:h-[180vh] md:h-[768px] lg:h-screen bg-cover bg-center hero">
+    <div class="flex justify-center h-full">
       <div class="container">
-        <nav class="text-white p-5 relative z-20 flex items-center justify-between">
+        <nav class="text-white p-5 relative z-20 flex items-center justify-between lg:justify-start lg:gap-44">
           <p class="title font-medium text-[24px]">Indotravel</p>
 
-          <div class="gap-5 hidden lg:flex">
-            <a href="#" v-for="(data , index) in menu" :key="index" class="text-base hover:underline hover:underline-offset-8 
-              hover:decoration-[3px] ease-in transition duration-150 decoration-sky-500 font-medium">
+          <div class="gap-10 hidden lg:flex">
+            <a href="#" v-for="(data , index) in menu" :key="index" class="text-base uppercase font-medium">
               {{data.linkName}}
             </a>
           </div>
-
-          <button class="rounded-full w-[154px] h-[48px] hidden lg:flex bg-secondarycolor 
-               items-center justify-center gap-2 font-medium text-base">
-            <icon :icon="mdiEmail" />
-            Contact us
-          </button>
 
           <button class="block lg:hidden" @click="openMenu = !openMenu">
             <icon :icon="mdiMenu" />
           </button>
         </nav>
-
-        <div class="h-96 flex items-center w-full">
-          <div class="flex flex-col lg:flex-col gap-5 xl:flex-row w-full justify-between items-center text-white">
+          <!-- h-[700px] sm:h-96 md:h-[750px]  -->
+        <div class="flex items-center w-full h-full">
+          <div class="flex flex-col gap-10  w-full justify-between items-center text-white">
             <div>
-              <p class="font-semibold text-[32px] sm:text-5xl leading-[50px] 
-                  w-[312px] sm:w-[612px] xl:leading-[90px] sm:leading-[72px] text-center xl:text-start lg:text-[64px] lg:w-[714px]">
-                We Bring You To The Future Of Technology
+              <p class="text-uppercase w-[312px] md:w-[477px] 
+              leading-[48px] md:leading-[68px] font-bold text-center text-[32px] md:text-5xl">
+                EXPLORE BEAUTIFUL PARTS IN INDONESIA
               </p>
             </div>
 
-            <div class="flex w-[313px] sm:w-[415px] flex-col justify-center text-center xl:text-start gap-5 xl:justify-end">
-              <p class="text-sm leading-loose lg:leading-7">
-                Infinitech is an IT company that could transform 
-                your digital problems into a new wonderful solutions that could scale your business up.
-              </p>
-
-              <div class="flex justify-center xl:justify-start">
-                <button class="rounded-full bg-secondarycolor flex 
-                    items-center justify-center px-4 py-3 font-medium text-base">
-                  Get Started
+            <div class="w-full">
+              <div class="flex justify-center">
+                <button class="rounded-full p-3 border-2 border-white">
+                  <icon size="25" :icon="mdiArrowDown" />
                 </button>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-    <img class="absolute z-0 top-0 right-0" 
-      src="@/assets/circle.svg" alt="">
-    <img class="absolute z-0 -left-[50px] -bottom-[250px]"
-      src="@/assets/bigcircle.png" alt="">
+
 
     <Transition name="slide-fade">
       <div v-if="openMenu" 
@@ -118,3 +104,7 @@ const menu = ref(
     </Transition>
   </div>
 </template>
+
+<style scoped>
+
+</style>
