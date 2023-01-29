@@ -7,8 +7,7 @@ import Body from "@/components/Body.vue";
 
 <template>
   <div class="bg-white w-full font-body">
-    <!-- Section on -->
-    <div class="w-full h-screen proseries:h-[90vh] hero">
+    <div class="w-full h-screen hero">
       <Navbar />
       <Hero />
     </div>
