@@ -7,7 +7,7 @@ import { mdiArrowDown } from "@mdi/js";
 
 
 <template>
-  <div class="w-full flex justify-center items-center h-[90vh]">
+  <div class="w-full flex justify-center items-center min-h-[90vh]">
     <div class="flex flex-col gap-10 w-full justify-between items-center text-white">
       <p class="text-uppercase w-[312px] md:w-[477px] 
         leading-[48px] md:leading-[68px] font-bold text-center text-[32px] md:text-5xl">
@@ -23,5 +23,4 @@ import { mdiArrowDown } from "@mdi/js";
       </div>
     </div>
   </div>
-
 </template>

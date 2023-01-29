@@ -13,19 +13,16 @@ const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa8
 
 <template>
   <div class="bg-basecolor w-full font-body">
-    <div class="w-full h-screen bg-cover bg-center" :class="bgHero">
-      <Navbar />
-      <Hero />
+    <div class="w-full min-h-[90vh] bg-cover bg-center" :class="bgHero">
+      <div class="hero">
+        <div class="secondLayer">
+          <Navbar />
+          <Hero />
+        </div>
+      </div>
     </div>
-    <div class="min-h-screen body  blur-2xl">
-      hflflf
+    <div class="min-h-screen">
+      <Body />
     </div>
   </div>
 </template>
-
-<style scoped>
-.body {
-  /* background: rgba(0,0,0,.5); */
-  background: #08131D;
-}
-</style>
