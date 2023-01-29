@@ -54,9 +54,12 @@ const menu = ref(
           <icon :icon="mdiMenu" />
         </button>
       </nav>
-      <Transition name="slide-fade">
-        <div v-if="openMenu" 
-          class="h-screen p-5 absolute block lg:hidden z-50 top-10 w-full">
+    </div>
+
+    <Transition name="slide-fade">
+      <div v-if="openMenu" class="w-full flex justify-center absolute lg:hidden z-50 top-10">
+        <div 
+          class="h-screen p-5 w-full">
           <div class="bg-secondarycolor transition ease-in-out delay-150 p-4 rounded-lg shadow-xl">
             <div class="flex justify-between text-white items-center">
               <p class="font-medium text-base">Main Menu</p>
@@ -64,7 +67,6 @@ const menu = ref(
                 <icon :icon="mdiClose" />
               </button>
             </div>
-
             <ul class="divide-y divide-white/75">
               <li v-for="(menuItem, index) in menu" :key="index" class="text-base font-medium p-3 text-white capitalize">
                 {{menuItem.linkName}} 
@@ -72,8 +74,7 @@ const menu = ref(
             </ul>
           </div>
         </div>
-      </Transition>
-    </div>
+      </div>
+    </Transition>
   </div>
-  
 </template>
