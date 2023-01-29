@@ -4,7 +4,7 @@
 
 
 <template>
-  <div>
+  <div class="">
     Hello Body
   </div>
 </template>
