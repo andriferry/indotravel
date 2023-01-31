@@ -43,13 +43,15 @@ const menu = ref(
 <template>
   <div class="w-full flex justify-center">
     <div class="container">
-      <nav class="text-white p-5 relative z-20 flex items-center justify-between lg:justify-start lg:gap-44">
+      <nav class="text-white p-5 relative z-20 flex items-center justify-between lg:justify-start lg:gap-20 xl:gap-44">
         <p class="title font-medium text-[24px]">Indotravel</p>
-          <div class="gap-10 hidden lg:flex">
-            <a href="#" v-for="(data , index) in menu" :key="index" class="text-base uppercase font-medium">
-             {{data.linkName}}
-            </a>
-          </div>
+
+        <div class="gap-10 hidden lg:flex">
+          <a href="#" v-for="(data , index) in menu" :key="index" class="text-base truncate uppercase font-medium">
+           {{data.linkName}}
+          </a>
+        </div>
+        
         <button class="block lg:hidden" @click="openMenu = !openMenu">
           <icon :icon="mdiMenu" />
         </button>

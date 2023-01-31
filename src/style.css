@@ -21,34 +21,6 @@
     top: 46px;
     left: -32px;
   }
-
-  @media screen(sm) {
-    .quote::before {
-      top: 128px;
-    }
-  }
-
-  @media screen(md) {
-    .quote::before {
-      top: 111px;
-    }
-  }
-
-  @media screen(lg) {
-    .quote::before {
-      top: 140px;
-      left: -11px;
-    }
-  }
-
-  @media screen(xl) {
-    .quote::before {
-      top: 185px;
-      left: -11px;
-      font-size: 500px;
-    }
-  }
-  
 }
 
 
