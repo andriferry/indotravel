@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import Hero from "@/components/Hero.vue";
 import Navbar from "@/components/Navbar.vue";
 import NumberOfSpots from "@/components/NumberOfSpots.vue";
+import BeautifulSpots from "@/components/BeautifulSpots.vue";
 
 
 //State 
@@ -23,6 +24,7 @@ const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa8
     </div>
     <div class="min-h-screen">
       <NumberOfSpots />
+      <BeautifulSpots />
     </div>
   </div>
 </template>
