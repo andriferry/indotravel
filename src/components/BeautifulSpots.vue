@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from 'vue';
 import { mdiArrowLeft , mdiArrowRight } from "@mdi/js";
-import { Perspective , Fade } from "@egjs/flicking-plugins";
+import { Fade } from "@egjs/flicking-plugins";
 
 
 // State 
 const flicking = ref()
 const plugins = ref([
-  new Fade()
+  new Fade(),
 ])
 const options = ref({
   renderOnlyVisible: true,
@@ -66,12 +66,13 @@ const spots = ref(
       </div> -->
 
     <div class="flex justify-center">
-      <div class="w-[350px] sm:w-[600px] md:w-[750px] lg:w-[755px]">
+      <div class="w-[350px] sm:w-[600px] md:w-[750px] lg:w-[755px] xl:w-[1200px]">
         <Flicking ref="flicking" :options="options" :plugins="plugins">
-          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[300px] sm:w-[160px] md:w-[213px] lg:w-[282px] h-[220px] mx-4 bg-cover bg-center rounded-xl">
+          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[312px] h-[220px] sm:w-[160px] md:w-[213px] sm:h-[250px] md:h-[300px]
+             lg:w-[282px] lg:h-[400px] mx-4 bg-cover bg-center rounded-xl">
             <div class="w-full h-full flex flex-col-reverse text-center gap-1 py-6  rounded-xl spotsLayer">
-              <span class="text-xs font-normal">{{spot.subtitle}}</span>
-               <p class="text-sm font-semibold leading-4 truncate text-center">
+              <span class="text-xs md:text-sm lg:text-base font-normal">{{spot.subtitle}}</span>
+               <p class="text-sm md:text-lg lg:text-2xl font-semibold leading-4 truncate text-center">
                 {{spot.title}}
               </p>
             </div>
