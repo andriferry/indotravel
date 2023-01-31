@@ -1,18 +1,18 @@
 <script setup>
 import { ref } from 'vue';
 import { mdiArrowLeft , mdiArrowRight } from "@mdi/js";
-import { Perspective } from "@egjs/flicking-plugins";
+import { Perspective , Fade } from "@egjs/flicking-plugins";
 
 
 // State 
 const flicking = ref()
 const plugins = ref([
-  new Perspective({ rotate: 0.5 }),
+  new Fade()
 ])
 const options = ref({
   renderOnlyVisible: true,
   circular: true,
-  defaultIndex: 2,
+  defaultIndex: 1,
 })
 
 const spots = ref(
@@ -28,6 +28,16 @@ const spots = ref(
       class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
     },
     {
+      title: 'Toba Lake',
+      subtitle: 'North Sumatra',
+      class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
+    },
+     {
+      title: 'Toba Lake',
+      subtitle: 'North Sumatra',
+      class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
+    },
+     {
       title: 'Toba Lake',
       subtitle: 'North Sumatra',
       class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
@@ -56,9 +66,9 @@ const spots = ref(
       </div> -->
 
     <div class="flex justify-center">
-      <div class="w-[350px]">
+      <div class="w-[350px] sm:w-[600px] md:w-[750px] lg:w-[755px]">
         <Flicking ref="flicking" :options="options" :plugins="plugins">
-          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[300px] h-[220px] mx-4 bg-cover bg-center rounded-xl">
+          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[300px] sm:w-[160px] md:w-[213px] lg:w-[282px] h-[220px] mx-4 bg-cover bg-center rounded-xl">
             <div class="w-full h-full flex flex-col-reverse text-center gap-1 py-6  rounded-xl spotsLayer">
               <span class="text-xs font-normal">{{spot.subtitle}}</span>
                <p class="text-sm font-semibold leading-4 truncate text-center">
