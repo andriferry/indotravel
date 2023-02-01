@@ -26,6 +26,7 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const options = ref({
   renderOnlyVisible: true,
+  defaultIndex: 0,
   circular: true,
 });
 
