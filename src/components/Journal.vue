@@ -23,31 +23,21 @@ const spots = ref(
 
 
 <template>
-  <div class="text-white w-100 h-100 flex flex-col items-center gap-10 justify-center p-5 mt-20">
-    <p class="text-2xl md:text-[32px] lg:text-[40px] font-semibold leading-10 md:leading-[54px] w-[312px] lg:w-[620px] sm:w-2/3 md:w-[496px] text-center">
-      TAKE A LOOK THESE BEAUTIFUL SPOTS IN INDONESIA
-    </p>
-
-    <div class="grid grid-cols-2 w-full gap-8">
-      <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[148px] h-[220px] bg-cover bg-center rounded-xl">
-        <div class="w-full h-full flex flex-col-reverse text-center gap-1 py-6  rounded-xl spotsLayer">
-          <span class="text-xs font-normal">{{spot.subtitle}}</span>
-           <p class="text-sm font-semibold leading-4 truncate text-center">
-            {{spot.title}}
-          </p>
+  <div class="w-full py-5 px-6">
+    <div class="grid text-white grid-rows-4 grid-flow-col gap-4">
+      <div class="flex justify-between items-center border-b-2 border-[#B2BCC5] pb-3">
+        <p class="font-semibold leading-10 w-[306px] text-2xl">
+          SOME JOURNALS OF <br> THE BEAUTY OF INDONESIA
+        </p>
+        <div class="hidden sm:flex gap-3">
+           <button class="rounded-full p-2 border-2 border-white">
+            <icon size="25" :icon="mdiArrowLeft" />
+          </button>
+           <button class="rounded-full p-2 border-2 border-white">
+            <icon size="25" :icon="mdiArrowRight" />
+          </button>
         </div>
       </div>
-    </div>
-
-    <div class="w-full flex gap-10 justify-center">
-      <button class="flex gap-3 uppercase text-base font-normal">
-        <icon :icon="mdiArrowLeft" />
-        previous
-      </button>
-      <button class="flex gap-3 uppercase text-base font-normal">
-        next
-         <icon :icon="mdiArrowRight" />
-      </button>
     </div>
   </div>
 </template>
