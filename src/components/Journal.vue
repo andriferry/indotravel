@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { ref, watch } from 'vue';
 import { mdiArrowLeft , mdiArrowRight } from "@mdi/js";
 
 
@@ -20,6 +21,20 @@ const spots = ref(
   ]
 );
 
+const flicking = ref()
+const breakpoints = useBreakpoints(breakpointsTailwind)
+
+const options = ref({
+  renderOnlyVisible: true,
+  circular: true,
+});
+
+//Watch
+watch(breakpoints.sm, (value) => {
+  if (value) options.value.align = "prev"
+  else delete options.value.align
+});
+
 </script>
 
 
@@ -31,33 +46,47 @@ const spots = ref(
           SOME JOURNALS OF <br> THE BEAUTY OF INDONESIA
         </p>
         <div class="hidden sm:flex gap-3">
-          <button class="rounded-full p-2 border-2 border-white">
+          <button @click="flicking.prev()" class="rounded-full p-2 border-2 border-white">
             <icon size="25" :icon="mdiArrowLeft" />
           </button>
-          <button class="rounded-full p-2 border-2 border-white">
+          <button @click="flicking.next()" class="rounded-full p-2 border-2 border-white">
             <icon size="25" :icon="mdiArrowRight" />
           </button>
         </div>
       </div>
+      
+      <div class="flex justify-center w-full">
+        <div class="w-[400px] sm:w-full">
+          <Flicking ref="flicking" :options="options">
+            <div class="" v-for="data in 5" :key="data">
+              <div class="flex gap-3 justify-center flex-col">
+                <div class="flex flex-col w-[350px] px-5">
+                  <span class="font-normal text-xs text-[#E7ECF0] tracking-wide leading-6">
+                    FEB 20, 2022
+                  </span>
 
-      <div class="flex gap-3 flex-col">
-        <span class="font-normal text-xs text-[#E7ECF0] tracking-wide leading-6">
-          FEB 20, 2022
-        </span>
+                  <p class="leading-7 font-semibold text-base ">
+                    Borobudur is an Indonesian monument and is one of those places one should visitbefore    they die.
+                  </p>
+                </div>
 
-        <p class="leading-7 font-semibold text-base ">
-          Borobudur is an Indonesian monument and is one of those places one should visit before they die.
-        </p>
-
-        <div class="w-[312px] h-[200px] bg-cover bg-center rounded-xl" :class="bgImg" />
-
+                <div class="w-full flex justify-center">
+                  <div 
+                    class="w-[312px] h-[200px] bg-cover bg-center rounded-xl" 
+                    :class="bgImg" 
+                  />
+                </div>
+              </div>
+            </div>
+          </Flicking>
+        </div>
       </div>
-
+        
       <div class="flex sm:hidden gap-3 w-full justify-center items-center">
-        <button class="rounded-full p-2 border-2 border-white">
-            <icon size="25" :icon="mdiArrowLeft" />
+        <button @click="flicking.prev()" class="rounded-full p-2 border-2 border-white">
+          <icon size="25" :icon="mdiArrowLeft" />
         </button>
-        <button class="rounded-full p-2 border-2 border-white">
+        <button @click="flicking.next()" class="rounded-full p-2 border-2 border-white">
           <icon size="25" :icon="mdiArrowRight" />
         </button>
       </div>
