@@ -40,8 +40,8 @@ watch(breakpoints.sm, (value) => {
 
 
 <template>
-  <div class="w-full py-5 px-6 mt-16">
-    <div class="flex flex-col text-white  gap-10">
+  <div class="w-full py-5 px-6 mt-16 md:flex md:justify-center">
+    <div class="flex flex-col text-white gap-10 md:w-[688px]">
       <div class="sm:flex sm:justify-between sm:items-center border-b-2 border-[#B2BCC5]">
         <p class="font-semibold leading-10 w-[306px] text-2xl">
           SOME JOURNALS OF <br> THE BEAUTY OF INDONESIA
