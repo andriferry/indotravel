@@ -18,6 +18,36 @@ const options = ref({
 const spots = ref(
   [
     {
+      title: 'Malioboro Street',
+      subtitle: 'Special Region of Yogyakarta',
+      class: "bg-[url('https://images.unsplash.com/photo-1631002165167-bdfa4ac12b92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')]"
+    },
+    {
+      title: 'Raja Ampat',
+      subtitle: 'Raja Ampat, West Papua',
+      class: "bg-[url('https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+    },
+    {
+      title: 'Garuda Wisnu Kencana',
+      subtitle: 'Jimbaran, Bali',
+      class: "bg-[url('https://images.unsplash.com/photo-1641741296263-ddbc7d5f4137?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80')]"
+    },
+    {
+      title: 'Komodo Island',
+      subtitle: 'East Nusa Tenggara',
+      class: "bg-[url('https://images.unsplash.com/photo-1603139793104-5e880b142e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')]"
+    },
+    {
+      title: 'National Monument',
+      subtitle: 'Central Jakarta',
+      class: "bg-[url('https://images.unsplash.com/photo-1631683458000-32bd06cb938a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')]"
+    },
+    {
+      title: 'Mount Bromo',
+      subtitle: 'Malang, East Java',
+      class: "bg-[url('https://images.unsplash.com/photo-1511710348138-74156045269f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80')]"
+    },
+    {
       title: 'Borobudur Temple',
       subtitle: 'Magelang, Central Java',
       class: "bg-[url('https://images.unsplash.com/photo-1596402184320-417e7178b2cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
@@ -27,21 +57,6 @@ const spots = ref(
       subtitle: 'North Sumatra',
       class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
     },
-    {
-      title: 'Toba Lake',
-      subtitle: 'North Sumatra',
-      class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
-    },
-     {
-      title: 'Toba Lake',
-      subtitle: 'North Sumatra',
-      class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
-    },
-     {
-      title: 'Toba Lake',
-      subtitle: 'North Sumatra',
-      class: "bg-[url('https://images.unsplash.com/photo-1586703449297-0618fa522ecf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80')]"
-    }
   ]
 );
 
@@ -53,22 +68,10 @@ const spots = ref(
     <p class="text-2xl md:text-[32px] lg:text-[40px] font-semibold leading-10 md:leading-[54px] w-[312px] lg:w-[620px] sm:w-2/3 md:w-[496px] text-center">
       TAKE A LOOK THESE BEAUTIFUL SPOTS IN INDONESIA
     </p>
-
-      <!-- <div class="grid grid-cols-2 w-full gap-8">
-          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[148px] h-[220px] bg-cover bg-center rounded-xl">
-            <div class="w-full h-full flex flex-col-reverse text-center gap-1 py-6  rounded-xl spotsLayer">
-              <span class="text-xs font-normal">{{spot.subtitle}}</span>
-               <p class="text-sm font-semibold leading-4 truncate text-center">
-                {{spot.title}}
-              </p>
-            </div>
-          </div>
-      </div> -->
-
     <div class="flex justify-center">
       <div class="w-[350px] sm:w-[600px] md:w-[750px] lg:w-[755px] xl:w-[1200px]">
         <Flicking ref="flicking" :options="options" :plugins="plugins">
-          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[312px] h-[220px] sm:w-[160px] md:w-[213px] sm:h-[250px] md:h-[300px]
+          <div v-for="spot, index in spots" :key="index" :class="spot.class" class="w-[312px] h-[350px] sm:w-[160px] md:w-[213px] sm:h-[250px] md:h-[300px]
              lg:w-[282px] lg:h-[400px] mx-4 bg-cover bg-center rounded-xl">
             <div class="w-full h-full flex flex-col-reverse text-center gap-1 py-6  rounded-xl spotsLayer">
               <span class="text-xs md:text-sm lg:text-base font-normal">{{spot.subtitle}}</span>
