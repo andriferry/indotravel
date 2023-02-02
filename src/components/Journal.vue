@@ -28,6 +28,7 @@ const options = ref({
   renderOnlyVisible: true,
   defaultIndex: 0,
   circular: true,
+  align: "prev"
 });
 
 //Watch
@@ -40,17 +41,18 @@ watch(breakpoints.sm, (value) => {
 
 
 <template>
-  <div class="w-full py-5 px-6 mt-16 md:flex md:justify-center">
-    <div class="flex flex-col text-white gap-10 md:w-[688px]">
-      <div class="sm:flex sm:justify-between sm:items-center border-b-2 border-[#B2BCC5]">
-        <p class="font-semibold leading-10 w-[306px] text-2xl">
+  <div class="w-full py-5 px-6 sm:px-10 mt-16 md:flex md:justify-center">
+    <div class="flex flex-col text-white gap-10 md:w-[688px] proseriesLandscape:w-[750px] xl:w-[90%]">
+      <div class="sm:flex sm:justify-between sm:items-end border-b-2 border-[#B2BCC5]">
+        <p class="font-semibold leading-10 md:leading-[54px] w-[306px] md:w-[408px] xl:w-[510px] text-2xl md:text-3xl lg:text-[32px]
+          xl:text-[40px]">
           SOME JOURNALS OF <br> THE BEAUTY OF INDONESIA
         </p>
-        <div class="hidden sm:flex gap-3">
-          <button @click="flicking.prev()" class="rounded-full p-2 border-2 border-white">
+        <div class="hidden sm:flex gap-3 py-2">
+          <button @click="flicking.prev()" class="rounded-full p-1 md:p-2 border-2 border-white">
             <icon size="25" :icon="mdiArrowLeft" />
           </button>
-          <button @click="flicking.next()" class="rounded-full p-2 border-2 border-white">
+          <button @click="flicking.next()" class="rounded-full p-1 md:p-2 border-2 border-white">
             <icon size="25" :icon="mdiArrowRight" />
           </button>
         </div>
@@ -60,20 +62,20 @@ watch(breakpoints.sm, (value) => {
         <div class="w-[350px] sm:w-full">
           <Flicking ref="flicking" :options="options">
             <div class="" v-for="data in 5" :key="data">
-              <div class="flex gap-3 justify-center flex-col">
-                <div class="flex flex-col w-[350px] px-5">
-                  <span class="font-normal text-xs text-[#E7ECF0] tracking-wide leading-6">
+              <div class="flex gap-3 proseriesLandscape:w-[400px] xl:w-[628px] justify-center flex-col">
+                <div class="flex flex-col w-[350px] xl:w-full px-5 proseries:px-0 sm:px-2">
+                  <span class="font-normal text-xs xl:text-sm text-[#E7ECF0] tracking-wide leading-6">
                     FEB 20, 2022
                   </span>
 
-                  <p class="leading-7 font-semibold text-base ">
+                  <p class="leading-7 xl:leading-9 font-semibold text-base xl:text-2xl">
                     Borobudur is an Indonesian monument and is one of those places one should visitbefore    they die.
                   </p>
                 </div>
 
-                <div class="w-full flex justify-center">
+                <div class="w-full proseries:px-2 flex justify-center sm:justify-start">
                   <div 
-                    class="w-[312px] h-[200px] bg-cover bg-center rounded-xl" 
+                    class="w-[312px] proseries:w-full sm:px-1 h-[200px] md:h-[367px] xl:h-[418px] bg-cover bg-center rounded-xl" 
                     :class="bgImg" 
                   />
                 </div>

@@ -15,6 +15,7 @@ module.exports = {
         black100color: '#151515'
       },
       screens: {
+        'proseriesLandscape': '900px',
         'proseries': '400px'
       },
     },
