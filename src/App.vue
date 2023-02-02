@@ -14,7 +14,7 @@ const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa8
 </script>
 
 <template>
-  <div class="bg-basecolor w-full font-body">
+  <div class="bg-basecolor w-full font-body ">
     <div class="w-full min-h-[90vh] bg-cover bg-center" :class="bgHero">
       <div class="hero">
         <div class="secondLayer">

@@ -2,7 +2,8 @@
 import { ref } from "vue";
 import { mdiArrowDown } from "@mdi/js";
 
-
+/// Function 
+const scroll = () => location.href = '#body';
 </script>
 
 
@@ -16,7 +17,7 @@ import { mdiArrowDown } from "@mdi/js";
 
       <div class="w-full">
         <div class="flex justify-center">
-          <button class="rounded-full p-3 border-2 border-white">
+          <button @click="scroll" class="rounded-full p-3 border-2 border-white">
             <icon size="25" :icon="mdiArrowDown" />
           </button>
         </div>
