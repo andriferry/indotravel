@@ -57,7 +57,7 @@ watch(breakpoints.sm, (value) => {
       </div>
       
       <div class="flex justify-center w-full">
-        <div class="w-[400px] sm:w-full">
+        <div class="w-[350px] sm:w-full">
           <Flicking ref="flicking" :options="options">
             <div class="" v-for="data in 5" :key="data">
               <div class="flex gap-3 justify-center flex-col">
