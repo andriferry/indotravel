@@ -13,7 +13,8 @@
     "@egjs/vue3-flicking": "^4.10.4",
     "@mdi/js": "^7.0.96",
     "@vueuse/core": "^9.12.0",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue3-autocounter": "^1.0.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",

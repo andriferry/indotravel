@@ -6,19 +6,19 @@ import { ref } from 'vue';
 const information = ref(
   [
     {
-      total: '17.000',
+      total: 17000,
       span: 'Total Island'
     },
     {
-      total: "79",
+      total: 79,
       span: 'Total Mountains'
     },
     {
-      total: '1.500 +',
+      total: 1500,
       span: 'Total Beaches'
     }, 
     {
-      total: '1.340',
+      total: 1340,
       span: 'Total Groups and Cultures'
     }
   ]
@@ -36,7 +36,10 @@ const information = ref(
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:w-[560px] lg:w-full lg:mt-10">
       <div class="flex flex-col text-center gap-3" v-for="(data , index) in information" :key="index">
         <p class="text-4xl leading-10 font-medium">
-          {{data.total}}
+          <vue3-autocounter ref="counter" :startAmount='0' :duration="3" 
+            :endAmount="data.total" separator="."
+            :suffix="data.total > 1000 ? '+' : ''"
+           />
         </p>
         <span class="text-center text-sm">
           {{data.span}}
