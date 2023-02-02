@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { useIntersectionObserver } from '@vueuse/core'
 
 import Hero from "@/components/Hero.vue";
 import Navbar from "@/components/Navbar.vue";
@@ -10,11 +11,22 @@ import Journal from "@/components/Journal.vue";
 
 //State 
 const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa88d0ce7a07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80')]");
+const root = ref(null)
+const target = ref(null)
+const isVisible = ref(false);
+
+useIntersectionObserver(
+  target,
+  ([{ isIntersecting }]) => {
+    isVisible.value = isIntersecting
+  },
+  { root },
+);
 
 </script>
 
 <template>
-  <div class="bg-basecolor w-full font-body ">
+  <div ref="root" class="bg-basecolor w-full font-body ">
     <div class="w-full min-h-[90vh] bg-cover bg-center" :class="bgHero">
       <div class="hero">
         <div class="secondLayer">
@@ -23,8 +35,8 @@ const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa8
         </div>
       </div>
     </div>
-    <div class="min-h-screen">
-      <NumberOfSpots />
+    <div ref="target" class="min-h-screen">
+      <NumberOfSpots v-if="isVisible" />
       <BeautifulSpots />
       <Journal />
     </div>
