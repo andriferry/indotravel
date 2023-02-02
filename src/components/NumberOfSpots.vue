@@ -1,12 +1,18 @@
 <script setup>
-import { ref } from 'vue';
+import { ref , defineProps } from 'vue';
 
+defineProps({
+  numberSpotVisible: {
+    type: Boolean,
+    default: false
+  }
+})
 
 // State 
 const information = ref(
   [
     {
-      total: 17000,
+      total: 16771,
       span: 'Total Island'
     },
     {
@@ -33,7 +39,7 @@ const information = ref(
       EVERY PARTS IN INDONESIA IS A BEAUTIFUL SPOTS TO EXPLORE
     </p>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:w-[560px] lg:w-full lg:mt-10">
+    <div v-if="numberSpotVisible" class="grid grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:w-[560px] lg:w-full lg:mt-10">
       <div class="flex flex-col text-center gap-3" v-for="(data , index) in information" :key="index">
         <p class="text-4xl leading-10 font-medium">
           <vue3-autocounter ref="counter" :startAmount='0' :duration="3" 

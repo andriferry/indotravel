@@ -12,15 +12,15 @@ import Journal from "@/components/Journal.vue";
 //State 
 const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa88d0ce7a07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80')]");
 const root = ref(null)
-const target = ref(null)
-const isVisible = ref(false);
+const numberSpot = ref(null)
+const beautifulSpot = ref(null)
+const numberSpotVisible = ref(false);
 
 useIntersectionObserver(
-  target,
-  ([{ isIntersecting }]) => {
-    isVisible.value = isIntersecting
-  },
-  { root },
+    numberSpot,
+    ([{ isIntersecting }], observerElement) => {
+      numberSpotVisible.value = isIntersecting
+    },
 );
 
 </script>
@@ -35,9 +35,13 @@ useIntersectionObserver(
         </div>
       </div>
     </div>
-    <div ref="target" class="min-h-screen">
-      <NumberOfSpots v-if="isVisible" />
-      <BeautifulSpots />
+    <div class="min-h-screen">
+      <div ref="numberSpot">
+        <NumberOfSpots :numberSpotVisible="numberSpotVisible" />
+      </div>
+      <div>
+        <BeautifulSpots />
+      </div>
       <Journal />
     </div>
   </div>

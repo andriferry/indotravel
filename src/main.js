@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
+import 'animate.css';
 import App from './App.vue'
 import Icon from "@/components/Icon.vue";
 import Vue3Autocounter from 'vue3-autocounter';

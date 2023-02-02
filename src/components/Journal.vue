@@ -87,15 +87,18 @@ watch(breakpoints.sm, (value) => {
         <div class="w-[350px] sm:w-full">
           <Flicking ref="flicking" :options="options">
             <div class="" v-for="(data , index) in articles" :key="index">
-              <div class="flex gap-3 proseriesLandscape:w-[400px] xl:w-[628px] justify-center flex-col">
+              <div class="flex gap-3 proseriesLandscape:w-[400px] xl:w-[606px] justify-center flex-col">
                 <div class="flex flex-col w-[350px] xl:w-full px-5 proseries:px-0 sm:px-2">
                   <span class="font-normal text-xs xl:text-sm text-[#E7ECF0] tracking-wide leading-6">
                     {{data.date}}
                   </span>
 
-                  <p class="leading-7 xl:leading-9 font-semibold text-base xl:text-2xl">
-                    {{data.text}}
-                  </p>
+                  <div class="h-10 mb-10">
+                    <p class="leading-7 xl:leading-9 
+                      font-semibold text-base xl:text-2xl">
+                      {{data.text}}
+                    </p>
+                  </div>
                 </div>
 
                 <div class="w-full proseries:px-2 flex justify-center sm:justify-start">
