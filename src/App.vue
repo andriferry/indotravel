@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar.vue";
 import NumberOfSpots from "@/components/NumberOfSpots.vue";
 import BeautifulSpots from "@/components/BeautifulSpots.vue";
 import Journal from "@/components/Journal.vue";
+import AnotherBeautifulSpots from "@/components/AnotherBeautifulSpots.vue";
 
 
 //State 
@@ -52,6 +53,8 @@ useIntersectionObserver(
         <BeautifulSpots :show="beautifulSpotVisible" />
       </div>
       <Journal />
+      <AnotherBeautifulSpots />
+
     </div>
   </div>
 </template>
