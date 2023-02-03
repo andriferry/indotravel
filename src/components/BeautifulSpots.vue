@@ -4,6 +4,14 @@ import { mdiArrowLeft , mdiArrowRight } from "@mdi/js";
 import { Fade } from "@egjs/flicking-plugins";
 
 
+//Props
+defineProps({
+  show: {
+    type: Boolean,
+    default: false
+  }
+})
+
 // State 
 const flicking = ref()
 const plugins = ref([
@@ -64,14 +72,14 @@ const spots = ref(
 
 
 <template>
-  <div class="text-white w-100 h-100 flex flex-col items-center gap-10 justify-center p-5 mt-20">
+  <div v-show="show" class="text-white w-100 h-100 flex flex-col items-center gap-10 justify-center p-5 mt-20 animate__animated animate__fadeInUp animate__fast ">
     <p class="text-2xl md:text-[32px] lg:text-[40px] font-semibold leading-10 md:leading-[54px] w-[312px] lg:w-[620px] sm:w-2/3 md:w-[496px] text-center">
       TAKE A LOOK THESE BEAUTIFUL SPOTS IN INDONESIA 
     </p>
     <div class="flex justify-center">
       <div class="w-[350px] sm:w-[600px] md:w-[750px] lg:w-[755px] xl:w-[1200px]">
         <Flicking ref="flicking" :options="options" :plugins="plugins">
-          <div v-for="(spot, index) in spots" :key="index" :class="spot.class" class="w-[312px] h-[350px] animate__animated animate__fadeInRightBig animate__fast sm:w-[160px] md:w-[213px] sm:h-[250px] md:h-[300px]
+          <div v-for="(spot, index) in spots" :key="index" :class="spot.class" class="w-[312px] h-[350px] animate__animated animate__fadeInRightBig sm:w-[160px] md:w-[213px] sm:h-[250px] md:h-[300px]
              lg:w-[282px] lg:h-[400px] mx-4 bg-cover bg-center rounded-xl">
             <div class="w-full h-full flex flex-col-reverse text-center gap-1 py-6  rounded-xl spotsLayer">
               <span class="text-xs md:text-sm lg:text-base font-normal">{{spot.subtitle}}</span>

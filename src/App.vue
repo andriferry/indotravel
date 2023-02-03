@@ -14,14 +14,23 @@ const bgHero = ref("bg-[url('https://images.unsplash.com/photo-1605860632725-fa8
 const root = ref(null)
 const numberSpot = ref(null)
 const beautifulSpot = ref(null)
+const beautifulSpotVisible = ref(false)
 const numberSpotVisible = ref(false);
 
 useIntersectionObserver(
-    numberSpot,
-    ([{ isIntersecting }], observerElement) => {
-      numberSpotVisible.value = isIntersecting
-    },
+  numberSpot,
+  ([{ isIntersecting }], observerElement) => {
+    if (!numberSpotVisible.value) numberSpotVisible.value = isIntersecting
+  },
 );
+
+useIntersectionObserver(
+  beautifulSpot,
+  ([{ isIntersecting }], observerElement) => {
+    if (!beautifulSpotVisible.value) beautifulSpotVisible.value = isIntersecting
+  },
+);
+
 
 </script>
 
@@ -39,8 +48,8 @@ useIntersectionObserver(
       <div ref="numberSpot">
         <NumberOfSpots :numberSpotVisible="numberSpotVisible" />
       </div>
-      <div>
-        <BeautifulSpots />
+      <div ref="beautifulSpot">
+        <BeautifulSpots :show="beautifulSpotVisible" />
       </div>
       <Journal />
     </div>
