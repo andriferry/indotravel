@@ -9,6 +9,10 @@ import { ref } from 'vue'
     leading-10 sm:leading-[54px] lg:leading-[64px] font-semibold text-center">
       ANOTHER BEAUTIFUL VIEW OF INDONESIA
     </p>
+
+    <!-- <div class="w-full py-5 px-6">
+      ddd
+    </div> -->
   </div>
 </template>
  
